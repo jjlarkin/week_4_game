@@ -98,7 +98,8 @@ $(document).ready(function() {
     //Forgot how to select by ID so just added a class of each color type as well
     //  .is didn't work
     $('.gem').on ('click', function() {
-        if ($(this).hasClass("red")) {
+        if ($(this).hasClass("red"))
+        {
             userGuess = userGuess + redNum;
             $('#userGuess').html(userGuess);
 
