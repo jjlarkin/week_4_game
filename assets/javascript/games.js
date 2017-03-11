@@ -26,24 +26,30 @@
 
 
  */
-
+/*
+-----------------------------------------------------------------------------------------
+Global Variables
+*/
 
 var userGuess =0;
-var randomNumber =Math.floor(Math.random()*101+19);
+var randomNumber = Math.floor(Math.random()*101+19);
 var wins = 0;
 var losses = 0;
-var redNum= Math.floor(Math.random()*11+1);
-var blueNum= Math.floor(Math.random()*11+1);
-var greenNum= Math.floor(Math.random()*11+1);
-var yellowNum= Math.floor(Math.random()*11+1);
+var redNum = Math.floor(Math.random()*11+1);
+var blueNum = Math.floor(Math.random()*11+1);
+var greenNum = Math.floor(Math.random()*11+1);
+var yellowNum = Math.floor(Math.random()*11+1);
 
 $('#userGuess').html(userGuess);
 
 console.log(randomNumber)
 $("#randomNumber").html(randomNumber);
+
+
+//--------------------------------------------------------------------------------------------------
 $(document).ready(function() {
     function reset(){
-        randomNumber=Math.floor(Math.random()*101+19);
+        randomNumber = Math.floor(Math.random()*101+19);
         $('#randomNumber').html(randomNumber);
         redNum= Math.floor(Math.random()*11+1);
         blueNum= Math.floor(Math.random()*11+1);
@@ -67,56 +73,55 @@ $(document).ready(function() {
         reset()
     }
 
+//trying out switch but didn't work
+
+    /*  $('.gem').on ('click', function(){
+     var className = $(this).attr('id');
+     switch (className) {
+     case ".red":
+     userGuess = userGuess + redNum;
+     $('#userGuess').html(userGuess);
+     break;
+     case "blue":
+     userGuess = userGuess + redNum;
+     break;
+     case "yellow":
+     userGuess = userGuess + redNum;
+     break;
+     case "green":
+     userGuess = userGuess + redNum;
+     break;
+     }*/
 
 
-    $('.gem').on ('click', function(){
-        if ($(this).hasClass(".gem"))
-            redNum= redNum
-        userGuess = userGuess + redNum;
-        console.log("userGuess= " + userGuess);
-        $('#userGuess').html(userGuess);
 
-        if (userGuess == randomNumber){
+    //Forgot how to select by ID so just added a class of each color type as well
+    //  .is didn't work
+    $('.gem').on ('click', function() {
+        if ($(this).hasClass("red")) {
+            userGuess = userGuess + redNum;
+            $('#userGuess').html(userGuess);
+
+        } if ($(this).hasClass("yellow")) {
+            userGuess = userGuess + yellowNum;
+
+            $('#userGuess').html(userGuess);
+
+        } if ($(this).hasClass("green")) {
+            userGuess = userGuess + greenNum;
+
+            $('#userGuess').html(userGuess);
+
+        } if ($(this).hasClass("blue")) {
+            userGuess = userGuess + blueNum;
+
+            $('#userGuess').html(userGuess);
+        }
+        if (userGuess == randomNumber) {
             win();
         }
-        else if ( userGuess > randomNumber){
+        else if (userGuess > randomNumber) {
             lose();
         }
     })
-
-
-    $('#yellow').on ('click', function(){
-        userGuess = userGuess + yellowNum;
-        $('#finalTotal').html(userGuess);
-        if (userGuess == randomNumber){
-            win();
-        }
-        else if ( userGuess > randomNumber){
-            lose();
-        }
-    })
-
-
-    $('#blue').on ('click', function(){
-        userGuess = userGuess + blueNum;
-        $('#finalTotal').html(userGuess);
-        if (userGuess == randomNumber){
-            win();
-        }
-        else if ( userGuess > randomNumber){
-            lose();
-        }
-    })
-    $('#green').on ('click', function(){
-        userGuess = userGuess + greenNum;
-        $('#finalTotal').html(userGuess);
-
-        if (userGuess === randomNumber){
-            win();
-        }
-        else if ( userGuess > randomNumber){
-            lose();
-        }
-    });
-});
-
+})
