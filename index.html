@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <title>Crystal</title>
+</head>
+<body background="assets/images/background.png">
+<script
+        src="https://code.jquery.com/jquery-3.1.1.js"
+        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+        crossorigin="anonymous"></script>
+
+
+<div background="assets/images/background.png">
+    <h1>Click a crystal to guess. Match the random number...but don't go over.</h1>
+
+
+</div>
+<div class="row">
+    <div class="panel panel-default col-md-3">
+        <div class=" panel-body"id="userGuess">
+
+        </div>
+    </div>
+    <div class="panel panel-default col-md-3">
+        <div class="panel-body"id="randomNumber">
+
+        </div>
+    </div>
+</div>
+<div class="btn-group" role="group" aria-label="...">
+    <img class="gem" src="assets/images/red.png" id="red" value="">
+    <img class="gem" src="assets/images/yellow.png" id="yellow" value="">
+    <img class="gem" src="assets/images/blue.png" id="blue" value="">
+    <img class="gem" src="assets/images/green.png" id="green" value="">
+
+
+</div>
+<div>
+    <h3>Wins: </h3>
+    <span id="wins"></span>
+</div>
+
+<div>
+    <h3>Losses: </h3>
+    <span id="losses"></span>
+</div>
+
+<script type="text/javascript" src="assets/javascript/games.js"></script>
+</body>
+</html>
