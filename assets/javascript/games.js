@@ -24,6 +24,12 @@
 
  * The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
 
+ ##### Option 1 Game design notes
+
+ * The random number shown at the start of the game should be between 19 - 120.
+
+ * Each crystal should have a random hidden value between 1 - 12.
+
 
  */
 /*
@@ -42,13 +48,15 @@ var yellowNum = Math.floor(Math.random()*11+1);
 
 $('#userGuess').html(userGuess);
 
-console.log(randomNumber)
+console.log(randomNumber);
 $("#randomNumber").html(randomNumber);
 
 
 //--------------------------------------------------------------------------------------------------
-$(document).ready(function() {
-    function reset(){
+$(document).ready(function()
+{
+    function reset()
+    {
         randomNumber = Math.floor(Math.random()*101+19);
         $('#randomNumber').html(randomNumber);
         redNum= Math.floor(Math.random()*11+1);
@@ -59,14 +67,16 @@ $(document).ready(function() {
         $('#userGuess').html(userGuess);
     }
 
-    function win(){
+    function win()
+    {
         alert("You won!");
         wins++;
         $('#wins').html(wins);
         reset();
     }
 
-    function lose(){
+    function lose()
+    {
         alert ("You lose!");
         losses++;
         $('#losses').html(losses);
@@ -103,25 +113,30 @@ $(document).ready(function() {
             userGuess = userGuess + redNum;
             $('#userGuess').html(userGuess);
 
-        } if ($(this).hasClass("yellow")) {
+        } if ($(this).hasClass("yellow"))
+        {
             userGuess = userGuess + yellowNum;
 
             $('#userGuess').html(userGuess);
 
-        } if ($(this).hasClass("green")) {
+        } if ($(this).hasClass("green"))
+        {
             userGuess = userGuess + greenNum;
 
             $('#userGuess').html(userGuess);
 
-        } if ($(this).hasClass("blue")) {
+        } if ($(this).hasClass("blue"))
+        {
             userGuess = userGuess + blueNum;
 
             $('#userGuess').html(userGuess);
         }
-        if (userGuess == randomNumber) {
+        if (userGuess === randomNumber)
+        {
             win();
         }
-        else if (userGuess > randomNumber) {
+        else if (userGuess > randomNumber)
+        {
             lose();
         }
     })
