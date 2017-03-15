@@ -51,7 +51,7 @@ $('#userGuess').html(userGuess);
 console.log(randomNumber);
 $("#randomNumber").html(randomNumber);
 
-
+// Functions
 //--------------------------------------------------------------------------------------------------
 $(document).ready(function()
 {
